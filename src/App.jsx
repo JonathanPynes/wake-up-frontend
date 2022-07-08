@@ -1,30 +1,25 @@
 import Logo from "./Logo"
 import './App.css';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 
-function App() {
+export default function App() {
   return (
     <AppCss>
-      <header className="App-header">
-        <p>
-          Sun animation to correspond to time.
-        </p>
-   
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          We are going to build a morning habits 
-        </a>
-              <Logo />
-      </header>
+    <h1>We Love Tits</h1>
+    <nav
+        style={{
+          borderBottom: "solid 1px",
+          paddingBottom: "1rem",
+        }}
+      >
+        <Link to="/invoices">Invoices</Link> |{" "}
+        <Link to="/expenses">Expenses</Link>
+      </nav>
     </AppCss>
   );
 }
 
-export default App;
 
 const AppCss = styled.div`
 background-color: grey;
