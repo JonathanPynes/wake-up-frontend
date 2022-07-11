@@ -1,4 +1,4 @@
-import Logo from "./Logo"
+import Logo from "./LoadingAnimation"
 import './App.css';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 export default function App() {
   return (
     <AppCss>
-    <h1>We Love Tits</h1>
+    <h1>WakeUp!</h1>
     <nav
         style={{
           borderBottom: "solid 1px",
@@ -14,7 +14,7 @@ export default function App() {
         }}
       >
         <Link to="/invoices">Invoices</Link> |{" "}
-        <Link to="/expenses">Expenses</Link>
+        <Link to="/home">Home</Link>
       </nav>
     </AppCss>
   );
