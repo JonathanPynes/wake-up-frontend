@@ -1,31 +1,26 @@
-import Logo from "./Logo"
-import './App.css';
-import styled from 'styled-components';
+import { useState } from 'react';
+import styled from 'styled-components/macro';
+import {Link} from 'react-router-dom';
+import CustomModal from './components/CustomModal';
 
-function App() {
+export default function App() {
+const [open, setOpen] = useState(false);
+const closeModal = () => setOpen(false);
+
   return (
     <AppCss>
-      <header className="App-header">
-        <p>
-          Sun animation to correspond to time.
-        </p>
-   
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          We are going to build a morning habits 
-        </a>
-              <Logo />
-      </header>
+      <button type="button" onClick={() => setOpen(o => !o)}> Controlled Popup </button>
+      <CustomModal open={open} closeModal={closeModal}> <span>This is a stuff </span></CustomModal>
+    <h1>WakeUp!</h1>
+        <Link to="/invoices">Invoices</Link> |{" "}
+        <Link to="/home">Home</Link>
     </AppCss>
   );
 }
 
-export default App;
 
 const AppCss = styled.div`
-background-color: grey;
+h1 {
+  color: var(--primary-color);
+}
 `
